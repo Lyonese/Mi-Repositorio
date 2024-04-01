@@ -9,7 +9,8 @@ body{
 h1{
     text-align: center;
     font-weight: bold;
-    font-size: 2em;}
+    font-size: 2em;
+    text-decoration: underline;}
 
 h2{
     font-size: 1.5em;}
@@ -17,12 +18,32 @@ h2{
 p{
     font-size: 1em;}
 
-.Contenedor{
-    background-color: yellow;
-    display: flex;
-    flex-direction: row;
-    }
-
 .Icono{
-    width: 20px;
+    width: 0.8em;}
+
+.Mapa{
+    width: 50%;
+    margin: 0%;
+    border-radius: 20px;
+}
+
+.Presentacion-Veterinaria, .Presentacion-Alimento, .Presentacion-Peluqueria{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border: 5px solid #9c27b0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.Texto-Bloque{
+    max-width: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.Imagen{
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
 }
