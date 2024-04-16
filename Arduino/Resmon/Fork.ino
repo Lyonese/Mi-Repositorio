@@ -13,7 +13,7 @@ void setup(void) {
 
 String serialReceive;                         
 String CPUstat;
-String PROCstat; //Cambiar por SSDstat
+String SSDstat; 
 String RAMstat;
 String RAMtotal;
 
@@ -23,7 +23,7 @@ void loop(void) {
   }
 
   CPUstat = serialReceive.substring(0, 5);
-  PROCstat = serialReceive.substring(5, 10);  //Cambiar por SSDstat 
+  SSDstat = serialReceive.substring(5, 10);   
   RAMstat = serialReceive.substring(10, 15);
   RAMtotal = serialReceive.substring(15, 20);     
     
@@ -44,10 +44,9 @@ void drawOLED(void) {
   OLED.print("CPU:");                         
   OLED.setPrintPos(35, firstRow);             
   OLED.print(CPUstat);                        
-  OLED.setPrintPos(70, firstRow);             
-  //OLED.print("%");                           
+  OLED.setPrintPos(70, firstRow);                                       
   OLED.setPrintPos(90, firstRow);             
-  OLED.print(PROCstat);   //cambiar por SSDstat                    
+  OLED.print(SSDstat);                       
 
   OLED.drawLine(0, firstRow + 2, width, firstRow + 2);  
 
@@ -56,7 +55,6 @@ void drawOLED(void) {
   OLED.setPrintPos(35, secondRow);
   OLED.print(RAMstat);
   OLED.setPrintPos(70, secondRow);
-  //OLED.print("%");
   OLED.setPrintPos(90, secondRow);
   OLED.print(RAMtotal);
 }

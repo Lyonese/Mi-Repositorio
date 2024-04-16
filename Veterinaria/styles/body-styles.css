@@ -1,10 +1,13 @@
 body{
     background-color: #eee;
     color: #333;
-    margin: auto;
+    margin: 0 auto;
     max-width: 90%;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    line-height: 1.5;}
+    line-height: 1.5;
+    padding: 20px;
+    
+}
 
 h1{
     text-align: center;
@@ -32,16 +35,19 @@ p{
     border: 5px solid #9c27b0;
     border-radius: 10px;
     margin-bottom: 10px;
+    
 }
 
 .Texto-Bloque{
     max-width: 50%;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
 }
 
 .Imagen{
     height: auto;
     max-width: 100%;
     border-radius: 10px;
+    box-shadow: 4px 4px 6px black;
 }
