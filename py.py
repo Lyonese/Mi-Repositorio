@@ -1,14 +1,53 @@
-import psutil
-import os
+# Inicialización de variables
+NroCliente = 1
+MesActual = 0
+MesTransaccion = 0
+TipoTransaccion = ""
+MontoTransaccion = 0.0
+Cliente = 1
 
-while(True):
-    #cpu = (((psutil.cpu_percent(interval=1.2, percpu=True))))
-    #lista = int(sum(lista) / len(lista))
-    #print(psutil.cpu_percent(interval=1.2, percpu=False))
-    #print(int(max(cpu)))
-    #print(int((psutil.cpu_percent(interval=1.2))))
-    load1, load5, load15 = psutil.getloadavg()
- 
-    cpu_usage = (load15/os.cpu_count()) * 100
- 
-    print("The CPU usage is : ", cpu_usage)
+SaldoCliente = 0.0
+HaberEmpresa = 0.0
+NroClienteMayorDeudor = 0
+MontoMayorDeuda = 0.0
+NroClienteMayorCompra = 0
+MontoMayorCompra = 0.0
+
+# Lectura del MesActual
+MesActual = int(input("Ingrese el mes actual: "))
+
+# Lectura inicial de NroCliente
+NroCliente = int(input("Ingrese el número de cliente (0 para terminar): "))
+
+while NroCliente != 0:
+    Cliente = NroCliente
+
+    while NroCliente == Cliente:
+        MesTransaccion = int(input("Ingrese el mes de transacción: "))
+        if MesTransaccion == MesActual:
+            TipoTransaccion = input("Ingrese el tipo de transacción (compra/pago): ")
+            MontoTransaccion = float(input("Ingrese el monto de la transacción: "))
+            
+            if TipoTransaccion == "compra":
+                SaldoCliente -= MontoTransaccion
+                if MontoTransaccion > MontoMayorCompra:
+                    MontoMayorCompra = MontoTransaccion
+                    NroClienteMayorCompra = Cliente
+            else:
+                SaldoCliente += MontoTransaccion
+        
+        NroCliente = int(input("Ingrese el número de cliente : "))
+    
+    if SaldoCliente < MontoMayorDeuda:
+        MontoMayorDeuda = SaldoCliente
+        NroClienteMayorDeudor = Cliente
+    
+    HaberEmpresa += SaldoCliente
+    
+    print(Cliente)
+    print(SaldoCliente)
+
+# Mostrar resultados
+print("Haber de la empresa:", ((-1) * HaberEmpresa))
+print("Cliente con mayor deuda:", NroClienteMayorDeudor, "con deuda de:", ((-1) * MontoMayorDeuda))
+print("Cliente con mayor compra:", NroClienteMayorCompra, "con compra de:", MontoMayorCompra)
