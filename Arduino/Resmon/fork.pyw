@@ -3,7 +3,7 @@ import serial
 
 ser = serial.Serial()                                           
 ser.baudrate = 9600                                             
-ser.port = "COM20"                                               
+ser.port = "COM5"                                               
 ser.open() 
 
 while(1):
@@ -46,8 +46,8 @@ while(1):
     lista.append(totalcpu)
     
     cpu = max(lista)"""
-    cpu = int(max((psutil.cpu_percent(interval=1.2, percpu=True))))
-    
+    #cpu = int(max((psutil.cpu_percent(interval=1.2, percpu=True))))
+    cpu = int((psutil.cpu_percent(interval=1.2)))
     if cpu < 10:
         cpuStr = "  " + str(cpu) + " %"                             
     elif cpu < 100:
