@@ -44,7 +44,6 @@ while(1):
     print(lista)
     cpu = max(lista)
     #cpu = int(max((psutil.cpu_percent(interval=1.2, percpu=True))))
-    
     if cpu < 10:
         cpuStr = "  " + str(cpu) + " %"                             
     elif cpu < 100:
@@ -73,7 +72,7 @@ while(1):
 
     serialDataStr = cpuStr + ssdStr + memStr + totalMemStr
     
-    ###########################################################
+    ##########################################################
     #print(len(serialDataStr))
     CPUstat = serialDataStr[0:5]
     SSDstat = serialDataStr[5:10]
