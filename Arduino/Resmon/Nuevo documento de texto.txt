@@ -1,0 +1,2 @@
+cd C:\MiRepo\Mi-Repositorio\Arduino\Resmon
+pyinstaller -F -w -i ibm.ico fork.pyw

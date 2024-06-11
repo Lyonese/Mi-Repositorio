@@ -3,7 +3,7 @@ import serial
 
 ser = serial.Serial()                                           
 ser.baudrate = 9600                                             
-ser.port = "COM5"                                               
+ser.port = "COM7"                                               
 ser.open() 
 
 while(1):
